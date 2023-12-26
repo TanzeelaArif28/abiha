@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday, Pyaari!</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&family=Sacramento&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        /* Add your custom CSS styles here */
+        body {
+            background-image: url(./images/istockphoto-452192359-612x612.jpg);
+            /* background-repeat: no-repeat; */
+        
+            text-align: center;
+            padding: 20px;
+
+    background-image: linear-gradient(to bottom, transparent 50%, background-repeat 50%),
+                      linear-gradient(to top, transparent 50%, background-repeat 50%);
+    background-size: 50% 100%;
+    background-repeat: repeat-y;
+    background-repeat: repeat-x;
+    background-position: top;
+    height: 100vh; /* Set the height to fill the viewport */
+
+        }
+        .jumbotron {
+            background-color: #c5d6df;
+            padding: 20px;
+        }
+        .container{
+            position: relative;
+            top: 200px;
+        }
+        .button{
+            /* text-decoration-color: #fff; */
+            border: #E0115F;
+            background: #E37383;
+            transition: cubic-bezier(0.39, 0.575, 0.565, 1);
+        }
+        .button:hover{
+            background: #c82a5f;
+        }
+        .button:active{
+            background: #E0115F !important; 
+        }
+        .button:focus-within{
+            background: #E0115F;
+        }
+        #countdown {
+    font-size: 36px;
+    font-weight: bold;
+    color: #977a9c;
+    margin-top: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    animation: pulse 1s infinite alternate; /* Add a pulsating animation */
+}
+
+/* Define a pulsating animation */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(1.1);
+    }
+}
+    .jumbotron h1{
+        font-family: 'Courier New', Courier, monospace;
+        font-family: 'Lucida Handwriting', 'cursive', sans-serif;
+        font-weight: bolder;
+    }
+    .lead{
+        font-family: Arial, Helvetica, sans-serif;
+        font-family: 'Sacramento', cursive;
+    }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="jumbotron">
+            <h1 class="display-4">Happy Birthday, Pyaari!</h1>
+            <p class="lead">Wishing you a day filled with joy and happiness.</p>
+            <hr class="my-4">
+            <p>Here's to many more wonderful years ahead.</p>
+            <p id="countdown"></p>
+            <a class="btn btn-primary btn-lg button" href="./Explore/form.html" role="button">Explore More</a>
+        </div>
+    </div>
+
+    <!-- JavaScript for Countdown Timer -->
+    <script>
+        const birthdayDate = new Date('2023-12-27T00:00:00');
+        const countdownElement = document.getElementById('countdown');
+
+        function updateCountdown() {
+            const now = new Date();
+            const timeDifference = birthdayDate - now;
+
+            const days = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((timeDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((timeDifference % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((timeDifference % (1000 * 60)) / 1000);
+
+            countdownElement.innerHTML = `Countdown: ${days}d ${hours}h ${minutes}m ${seconds}s`;
+        }
+
+        setInterval(updateCountdown, 1000);
+        updateCountdown();
+    </script>
+</body>
+</html>
